@@ -9,7 +9,8 @@ import { ContactList } from "./ContactsList/ContactsList";
 export class App extends Component {
   state = {
     contacts: [],
-    name: ''
+    name: '',
+    filter: '',
   }
 
 addContact = newContact => {
@@ -42,6 +43,8 @@ render() {
     </div>
   )
 }
+
 }
+
 
 

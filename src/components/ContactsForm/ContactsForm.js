@@ -4,15 +4,15 @@ import { FormStyle, FormTittle, FormInput, AddBtn } from './ContactsForm.styled'
 
 const FormSchema = Yup.object().shape({
     name: Yup.string()
-      .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Sory! Invalid name format.")
+      .matches(/^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/, "Sory! Wrong name format.")
       .min(2, 'Too short name of contact!')
-      .matches(15, 'Too long name of contact!')
-      .required('Name is required'),
+      .max(15, 'Too long name of contact!'),
+      // .required('Name is necessary'),
     number: Yup.string()
-      .matches(/\\+?\\d{1,4}?[ .\\-\\s]?\\(?\\d{1,3}?\\)?[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,9}/, "Sory! Invalid phone number format.")
+      .matches(/\+?\\d{1,4}?[ .\\-\\s]?\\(?\\d{1,3}?\\)?[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,4}[ .\\-\\s]?\\d{1,9}/, "Sory! Wrong phone number format.")
       .min(8, 'Too Short!')
-      .max(15, 'Too Long!')
-      .required('Phone number is required'),
+      .max(15, 'Too Long!'),
+      // .required('Phone number is necessary'),
   });
   
   export const ContactForm = ({ toAdd }) => {
