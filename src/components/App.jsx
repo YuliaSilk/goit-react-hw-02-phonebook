@@ -36,10 +36,13 @@ render() {
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm onAdd={this.addContact}/>
+      <ContactForm 
+      toAdd={this.addContact}/>
       <h2>Contacts</h2>
-      <Filter onChange = {this.changeFilter}/>
-      <ContactList contacts = {filterContacts()}/>
+      <Filter 
+      onChange = {this.changeFilter}/>
+      <ContactList 
+      contacts = {filterContacts}/>
     </div>
   )
 }
