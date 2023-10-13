@@ -4,13 +4,13 @@ import { FormStyle, FormTittle, FormInput, AddBtn } from './ContactsForm.styled'
 
 const FormSchema = Yup.object().shape({
     name: Yup.string()
-      .trim()
+      
       .matches("^[a-zA-Zа-яА-Я]+(([' /-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$", 'Invalid name format')
       .min(2, 'Too short contacts name!')
       .max(15, 'Too long contacts name!')
       .required('Required'),
     number: Yup.string()
-    .trim()
+    
     .matches("/+?/d{1,4}?[ ./-/s]?/(?/d{1,3}?/)?[ ./-/s]?/d{1,4}[ ./-/s]?/d{1,4}[ ./-/s]?/d{1,9}", 'Invalid phone number format')
     .required('Required'),
   });

@@ -35,7 +35,7 @@ render() {
   const filterContacts = this.filterContacts();
   return (
     <div>
-      <h1>Phonebook</h1>
+      
       <ContactForm 
       toAdd={this.addContact}/>
       <h2>Contacts</h2>
