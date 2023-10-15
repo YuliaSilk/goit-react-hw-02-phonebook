@@ -26,9 +26,9 @@ addContact = newContact => {
   this.setState(prevState => ({
     contacts: [...prevState.contacts, {...newContact, id: nanoid()}],
   }));
-  if (this.state.contacts.some(contact.name === values.name)){
-    Notiflix.Notify.failure('this contact has alresdy been added!');
-    }
+  // if (this.state.contacts.some(contact.name === values.name)){
+  //   Notiflix.Notify.failure('this contact has already been added!');
+  //   }
 };
 
 onChangeFilter = (evt) => {
