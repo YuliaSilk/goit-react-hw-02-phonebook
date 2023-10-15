@@ -5,6 +5,7 @@ import { Filter } from "./Filter/Filter";
 import { ContactList } from "./ContactsList/ContactsList";
 import { ContactHeaderStyle, ContactsContainer, PhonebookContainer } from "./Contacts/Contacts.styled";
 import { FormTittle } from "./ContactsForm/ContactsForm.styled";
+import Notiflix from 'notiflix';
 
 // model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
 
@@ -25,12 +26,13 @@ addContact = newContact => {
   this.setState(prevState => ({
     contacts: [...prevState.contacts, {...newContact, id: nanoid()}],
   }));
+  if (this.state.contacts.some(contact.name === values.name)){
+    Notiflix.Notify.failure('this contact has alresdy been added!');
+    }
 };
 
-changeFilter = value => {
-  this.setState(() => ({
-    filter: value,
-  }));
+onChangeFilter = (evt) => {
+  this.setState({ filter: evt.target.value });
 };
 
 filterContacts = () => {
@@ -53,7 +55,7 @@ render() {
       <ContactsContainer>
       <ContactHeaderStyle>Contacts</ContactHeaderStyle>
       <Filter 
-      onChange = {this.changeFilter}/>
+      onChange = {this.onChangeFilter}/>
       <ContactList 
       contacts = {filterContacts}
       onDeleteContact={this.deleteContact}
