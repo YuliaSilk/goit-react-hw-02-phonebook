@@ -1,17 +1,17 @@
-import { FilterStyle } from './Filter.styled'
+import { FilterInputStyle, FilterStyle } from './Filter.styled'
 
-const handleChange = (e, toSearch) => {
+const changeFilter = (e, toSearch) => {
 toSearch(e.target.value);
 }
 export const Filter = ({ filterName, toSearch}) => {
     return (
         <FilterStyle>
-            Filter
-            <input
+          Find contacts by name
+            <FilterInputStyle
             type="text"
             value={filterName}
-            placeholder="enter a name"
-            onChange={e => handleChange(e, toSearch)}
+            placeholder="Please, enter a name"
+            onChange={e => changeFilter(e, toSearch)}
             />
         </FilterStyle>
     )

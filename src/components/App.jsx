@@ -3,13 +3,21 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from "./ContactsForm/ContactsForm";
 import { Filter } from "./Filter/Filter";
 import { ContactList } from "./ContactsList/ContactsList";
+import { ContactHeaderStyle, ContactsContainer, PhonebookContainer } from "./Contacts/Contacts.styled";
+import { FormTittle } from "./ContactsForm/ContactsForm.styled";
 
 // model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
 
 export class App extends Component {
   state = {
-    contacts: [],
+    contacts: [
+      {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
+      {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
+      {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
+      {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
+    ],
     name: '',
+    number: '',
     filter: '',
   }
 
@@ -31,19 +39,27 @@ filterContacts = () => {
   });
 };
 
+deleteContact = (contactId) => {
+  console.log('deleteContact', contactId)
+}
+
 render() {
   const filterContacts = this.filterContacts();
   return (
-    <div>
-      
+    <PhonebookContainer>
+      <FormTittle>Phonebook</FormTittle>
       <ContactForm 
       toAdd={this.addContact}/>
-      <h2>Contacts</h2>
+      <ContactsContainer>
+      <ContactHeaderStyle>Contacts</ContactHeaderStyle>
       <Filter 
       onChange = {this.changeFilter}/>
       <ContactList 
-      contacts = {filterContacts}/>
-    </div>
+      contacts = {filterContacts}
+      onDeleteContact={this.deleteContact}
+      />
+      </ContactsContainer>
+    </PhonebookContainer>
   )
 }
 
