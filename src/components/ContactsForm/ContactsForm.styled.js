@@ -62,8 +62,7 @@ export const AddBtn = styled.button`
     -webkit-transition: all .4s ease-in-out;
     transition: all .4s ease-in-out;
 
-    background: rgb(19,42,19);
-    background: linear-gradient(304deg, rgba(19,42,19,0.9473039215686274) 21%, rgba(220,9,66,1) 79%);
+    background-image: linear-gradient(to right top, #081c15, #17320a, #464200, #8b4100, #d90429);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }
 &:focus {

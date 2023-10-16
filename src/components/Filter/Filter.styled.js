@@ -20,5 +20,6 @@ border-color: ${({ theme }) => theme.colors.border};
 outline: none;
 &:hover {
     border-color: #25aae1;
-    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);}
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
 `

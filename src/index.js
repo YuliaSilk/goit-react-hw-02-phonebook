@@ -8,7 +8,7 @@ const theme = {
   colors: {
     main: '#132A13',
     backgraund: '#081c15',
-    header:'#96ED89',
+    header:'#d9ed92',
     acent: '#fff',
     error: '#d90429',
     text:'#ECF39E',
