@@ -51,7 +51,7 @@ deleteContact = (contactId) => {
 
 render() {
   const filterContacts = this.filterContacts();
-  console.log(this.state.filter);
+  // console.log(this.state.filter);
   return (
     <PhonebookContainer>
       <FormTittle>Phonebook</FormTittle>
