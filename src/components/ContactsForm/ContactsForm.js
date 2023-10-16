@@ -40,7 +40,7 @@ const FormSchema = Yup.object().shape({
         </FormName>
         <FormName>Phone number
           <FormField name="number" placeholder="Enter phone number" type="tel"/>
-          <ErrorMessage component="div" name="number" />
+          <ErrMsg component="div" name="number" />
         </FormName>
 
         <AddBtn type="submit">Add contact</AddBtn>

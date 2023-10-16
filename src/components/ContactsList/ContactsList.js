@@ -1,12 +1,12 @@
 import { Contact } from "components/Contacts/Contacts";
-import { ContactItem, ContactsList, ContactContainer } from './ContactsList.styled';
+import { ContactsList, ContactContainer } from './ContactsList.styled';
 // import { ContactItem } from "components/Contacts/Contacts.styled";
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
     return (
         <ContactContainer>
             <ContactsList>
-                <ContactItem>
+               
                 {contacts.map(contact => 
                    
                    <Contact
@@ -15,7 +15,7 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
                     onDeleteContact={onDeleteContact}
                     />
                     )}
-                    </ContactItem>
+                   
             </ContactsList>
         </ContactContainer>
     );

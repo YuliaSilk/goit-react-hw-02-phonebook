@@ -1,14 +1,14 @@
-import { FilterInputStyle, FilterStyle } from './Filter.styled'
+import { FilterInputStyle, FilterStyle, TextToDo } from './Filter.styled'
 
-export const Filter = ({ filterName, onChangeFilter }) => {
+export const Filter = ({ filterName, onChange}) => {
     return (
         <FilterStyle>
-          Find contacts by name
+          <TextToDo>Find contacts by name</TextToDo>
             <FilterInputStyle
             type="text"
             value={filterName}
             placeholder="Please, enter a name"
-            onChange={onChangeFilter}
+            onChange={onChange}
             />
         </FilterStyle>
     )

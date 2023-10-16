@@ -23,12 +23,14 @@ export class App extends Component {
   }
 
 addContact = newContact => {
+    if (this.state.contacts.some(contact => contact.name === newContact.name)){
+    Notiflix.Notify.failure('this contact has already been added!');
+    return
+    }
   this.setState(prevState => ({
     contacts: [...prevState.contacts, {...newContact, id: nanoid()}],
   }));
-  // if (this.state.contacts.some(contact.name === values.name)){
-  //   Notiflix.Notify.failure('this contact has already been added!');
-  //   }
+
 };
 
 onChangeFilter = (evt) => {
@@ -42,11 +44,15 @@ filterContacts = () => {
 };
 
 deleteContact = (contactId) => {
-  console.log('deleteContact', contactId)
+  // console.log('deleteContact', contactId)
+ this.setState(prevState => ({
+  contacts: prevState.contacts.filter(contact => contact.id !== contactId)
+ }))
 }
 
 render() {
   const filterContacts = this.filterContacts();
+  console.log(this.state.filter);
   return (
     <PhonebookContainer>
       <FormTittle>Phonebook</FormTittle>
@@ -55,7 +61,7 @@ render() {
       <ContactsContainer>
       <ContactHeaderStyle>Contacts</ContactHeaderStyle>
       <Filter 
-      onChange = {this.onChangeFilter}/>
+      onChange = {this.onChangeFilter} filterName={this.filter}/>
       <ContactList 
       contacts = {filterContacts}
       onDeleteContact={this.deleteContact}

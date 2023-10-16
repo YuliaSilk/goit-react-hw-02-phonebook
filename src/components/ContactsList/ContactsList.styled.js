@@ -6,21 +6,19 @@ display: flex;
 flex-direction: column;
 gap: 8px;
 padding: 0;
-`;
 
-export const ContactItem = styled.li`
 width: 400px;
 
-color: theme.colors.main;
+color: ${({ theme }) => theme.colors.main};
 gap: 10px;
 margin-bottom: 10px;
 border-radius: 15px;
 
-
-:hover {
-    background-color: #E1DEF5;
+&:hover {
+    color: blue;
 }
-`
+`;
+
 export const ContactContainer = styled.div`
    
     width: 360px;
@@ -28,4 +26,4 @@ export const ContactContainer = styled.div`
     height: auto;
    
 
-`
+`;

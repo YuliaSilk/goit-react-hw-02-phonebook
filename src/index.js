@@ -6,9 +6,14 @@ import { GlobalStyle } from 'components/GlobalStyle';
 
 const theme = {
   colors: {
-    main: '#AD0467',
-    backgraund: '#F6E5EF',
-    acent: '#f80694',
+    main: '#132A13',
+    backgraund: '#081c15',
+    header:'#96ED89',
+    acent: '#fff',
+    error: '#d90429',
+    text:'#ECF39E',
+    border: '#90A955',
+    inputColor: '#31572C',
   },
 
   radii: {
@@ -20,7 +25,7 @@ spacing: value => `${value * 4}px`,
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <ThemeProvider theme={{theme}}>
+   <ThemeProvider theme={theme}>
     <App />
     <GlobalStyle/>
     </ThemeProvider>
