@@ -60,16 +60,16 @@ export const AddBtn = styled.button`
     moz-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
     -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-
-    background-image: linear-gradient(to right top, #081c15, #17320a, #464200, #8b4100, #d90429);
-    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+    transition: all .4s ease-in-out; 
+    box-shadow: inset 0 -3.25em 0 0 ${({ theme }) => theme.colors.border};
 }
 &:focus {
     outline: none;
 }
-
 `;
+
+
+
 
 export const ErrMsg = styled(ErrorMessage)`
 color: ${({ theme }) => theme.colors.error};
